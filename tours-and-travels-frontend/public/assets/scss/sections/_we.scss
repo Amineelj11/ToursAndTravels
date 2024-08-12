@@ -1,0 +1,41 @@
+
+/*---==================
+    09. We css 
+=================----*/
+
+.we-one_content-box{
+    @media #{$xm}{
+        margin-bottom: 50px;
+        text-align: center;
+    }
+    & p{
+        margin-bottom: 30px;
+    }
+}
+
+.we-two_image-box{
+    max-width: 630px;
+    @media #{$lm}{
+        margin: auto;
+    }
+    & .we-image{
+        & img{
+            @include border-radius(10px);
+        }
+    }
+}
+
+/* CTA CSS */ 
+
+.cta-image{
+    & img{
+        @include border-radius(10px);
+    }
+}
+
+.cta-content-box{
+    @media #{$xm}{
+        text-align: center;
+        margin-bottom: 80px;
+    }
+}

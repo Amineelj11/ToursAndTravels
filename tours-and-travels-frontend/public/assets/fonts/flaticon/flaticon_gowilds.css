@@ -1,0 +1,119 @@
+@font-face {
+    font-family: "flaticon_gowilds";
+    src: url("./flaticon_gowilds.ttf?d0235de0bbc7ec3e6bca4c8fddee355a") format("truetype"),
+url("./flaticon_gowilds.woff?d0235de0bbc7ec3e6bca4c8fddee355a") format("woff"),
+url("./flaticon_gowilds.woff2?d0235de0bbc7ec3e6bca4c8fddee355a") format("woff2"),
+url("./flaticon_gowilds.eot?d0235de0bbc7ec3e6bca4c8fddee355a#iefix") format("embedded-opentype"),
+url("./flaticon_gowilds.svg?d0235de0bbc7ec3e6bca4c8fddee355a#flaticon_gowilds") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon_gowilds !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-helmet:before {
+    content: "\f101";
+}
+.flaticon-best-price:before {
+    content: "\f102";
+}
+.flaticon-travel:before {
+    content: "\f103";
+}
+.flaticon-right-quote:before {
+    content: "\f104";
+}
+.flaticon-flight:before {
+    content: "\f105";
+}
+.flaticon-camp:before {
+    content: "\f106";
+}
+.flaticon-blanket:before {
+    content: "\f107";
+}
+.flaticon-cat:before {
+    content: "\f108";
+}
+.flaticon-tent:before {
+    content: "\f109";
+}
+.flaticon-fire:before {
+    content: "\f10a";
+}
+.flaticon-rabbit:before {
+    content: "\f10b";
+}
+.flaticon-wifi-router:before {
+    content: "\f10c";
+}
+.flaticon-solar-energy:before {
+    content: "\f10d";
+}
+.flaticon-cycling:before {
+    content: "\f10e";
+}
+.flaticon-fishing:before {
+    content: "\f10f";
+}
+.flaticon-gym:before {
+    content: "\f110";
+}
+.flaticon-hiking:before {
+    content: "\f111";
+}
+.flaticon-tent-1:before {
+    content: "\f112";
+}
+.flaticon-reviews:before {
+    content: "\f113";
+}
+.flaticon-award:before {
+    content: "\f114";
+}
+.flaticon-quote:before {
+    content: "\f115";
+}
+.flaticon-camping:before {
+    content: "\f116";
+}
+.flaticon-cable-car:before {
+    content: "\f117";
+}
+.flaticon-trailer:before {
+    content: "\f118";
+}
+.flaticon-firewood:before {
+    content: "\f119";
+}
+.flaticon-biking-mountain:before {
+    content: "\f11a";
+}
+.flaticon-fishing-1:before {
+    content: "\f11b";
+}
+.flaticon-fishing-2:before {
+    content: "\f11c";
+}
+.flaticon-caravan:before {
+    content: "\f11d";
+}
+.flaticon-world:before {
+    content: "\f11e";
+}
+.flaticon-journey:before {
+    content: "\f11f";
+}
+.flaticon-gps:before {
+    content: "\f120";
+}
+.flaticon-paper-plane:before {
+    content: "\f121";
+}

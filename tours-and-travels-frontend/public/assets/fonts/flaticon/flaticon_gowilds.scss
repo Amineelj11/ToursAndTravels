@@ -1,0 +1,157 @@
+$flaticon_gowilds-font: "flaticon_gowilds";
+
+@font-face {
+    font-family: $flaticon_gowilds-font;
+    src: url("./flaticon_gowilds.ttf?d0235de0bbc7ec3e6bca4c8fddee355a") format("truetype"),
+url("./flaticon_gowilds.woff?d0235de0bbc7ec3e6bca4c8fddee355a") format("woff"),
+url("./flaticon_gowilds.woff2?d0235de0bbc7ec3e6bca4c8fddee355a") format("woff2"),
+url("./flaticon_gowilds.eot?d0235de0bbc7ec3e6bca4c8fddee355a#iefix") format("embedded-opentype"),
+url("./flaticon_gowilds.svg?d0235de0bbc7ec3e6bca4c8fddee355a#flaticon_gowilds") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon_gowilds !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon_gowilds-map: (
+    "helmet": "\f101",
+    "best-price": "\f102",
+    "travel": "\f103",
+    "right-quote": "\f104",
+    "flight": "\f105",
+    "camp": "\f106",
+    "blanket": "\f107",
+    "cat": "\f108",
+    "tent": "\f109",
+    "fire": "\f10a",
+    "rabbit": "\f10b",
+    "wifi-router": "\f10c",
+    "solar-energy": "\f10d",
+    "cycling": "\f10e",
+    "fishing": "\f10f",
+    "gym": "\f110",
+    "hiking": "\f111",
+    "tent-1": "\f112",
+    "reviews": "\f113",
+    "award": "\f114",
+    "quote": "\f115",
+    "camping": "\f116",
+    "cable-car": "\f117",
+    "trailer": "\f118",
+    "firewood": "\f119",
+    "biking-mountain": "\f11a",
+    "fishing-1": "\f11b",
+    "fishing-2": "\f11c",
+    "caravan": "\f11d",
+    "world": "\f11e",
+    "journey": "\f11f",
+    "gps": "\f120",
+    "paper-plane": "\f121",
+);
+
+.flaticon-helmet:before {
+    content: map-get($flaticon_gowilds-map, "helmet");
+}
+.flaticon-best-price:before {
+    content: map-get($flaticon_gowilds-map, "best-price");
+}
+.flaticon-travel:before {
+    content: map-get($flaticon_gowilds-map, "travel");
+}
+.flaticon-right-quote:before {
+    content: map-get($flaticon_gowilds-map, "right-quote");
+}
+.flaticon-flight:before {
+    content: map-get($flaticon_gowilds-map, "flight");
+}
+.flaticon-camp:before {
+    content: map-get($flaticon_gowilds-map, "camp");
+}
+.flaticon-blanket:before {
+    content: map-get($flaticon_gowilds-map, "blanket");
+}
+.flaticon-cat:before {
+    content: map-get($flaticon_gowilds-map, "cat");
+}
+.flaticon-tent:before {
+    content: map-get($flaticon_gowilds-map, "tent");
+}
+.flaticon-fire:before {
+    content: map-get($flaticon_gowilds-map, "fire");
+}
+.flaticon-rabbit:before {
+    content: map-get($flaticon_gowilds-map, "rabbit");
+}
+.flaticon-wifi-router:before {
+    content: map-get($flaticon_gowilds-map, "wifi-router");
+}
+.flaticon-solar-energy:before {
+    content: map-get($flaticon_gowilds-map, "solar-energy");
+}
+.flaticon-cycling:before {
+    content: map-get($flaticon_gowilds-map, "cycling");
+}
+.flaticon-fishing:before {
+    content: map-get($flaticon_gowilds-map, "fishing");
+}
+.flaticon-gym:before {
+    content: map-get($flaticon_gowilds-map, "gym");
+}
+.flaticon-hiking:before {
+    content: map-get($flaticon_gowilds-map, "hiking");
+}
+.flaticon-tent-1:before {
+    content: map-get($flaticon_gowilds-map, "tent-1");
+}
+.flaticon-reviews:before {
+    content: map-get($flaticon_gowilds-map, "reviews");
+}
+.flaticon-award:before {
+    content: map-get($flaticon_gowilds-map, "award");
+}
+.flaticon-quote:before {
+    content: map-get($flaticon_gowilds-map, "quote");
+}
+.flaticon-camping:before {
+    content: map-get($flaticon_gowilds-map, "camping");
+}
+.flaticon-cable-car:before {
+    content: map-get($flaticon_gowilds-map, "cable-car");
+}
+.flaticon-trailer:before {
+    content: map-get($flaticon_gowilds-map, "trailer");
+}
+.flaticon-firewood:before {
+    content: map-get($flaticon_gowilds-map, "firewood");
+}
+.flaticon-biking-mountain:before {
+    content: map-get($flaticon_gowilds-map, "biking-mountain");
+}
+.flaticon-fishing-1:before {
+    content: map-get($flaticon_gowilds-map, "fishing-1");
+}
+.flaticon-fishing-2:before {
+    content: map-get($flaticon_gowilds-map, "fishing-2");
+}
+.flaticon-caravan:before {
+    content: map-get($flaticon_gowilds-map, "caravan");
+}
+.flaticon-world:before {
+    content: map-get($flaticon_gowilds-map, "world");
+}
+.flaticon-journey:before {
+    content: map-get($flaticon_gowilds-map, "journey");
+}
+.flaticon-gps:before {
+    content: map-get($flaticon_gowilds-map, "gps");
+}
+.flaticon-paper-plane:before {
+    content: map-get($flaticon_gowilds-map, "paper-plane");
+}

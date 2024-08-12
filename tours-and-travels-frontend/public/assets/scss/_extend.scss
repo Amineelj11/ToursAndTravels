@@ -1,0 +1,92 @@
+%heading{
+    color: $title-color;
+}
+
+%primary-color{
+    color: $primary-color
+}
+
+%secondary-color{
+    color: $secondary-color
+}
+
+%black-color{
+    color: $black-color;
+}
+
+%gray-color{
+    color: $gray-color;
+}
+
+%white-color{
+    color: $white;
+}
+
+%primary-bg{
+    background-color: $primary-color;
+}
+
+%secondary-bg{
+    background-color: $secondary-color;
+}
+
+%black-bg{
+    background-color: $black-color;
+}
+
+%white-bg{
+    background-color: $white;
+}
+
+%gray-bg{
+    background-color: $gray-color;
+}
+
+
+%h1{
+    @extend %heading;
+    font-size: $h1-font;
+    font-weight: 700;
+    line-height: 1.12;
+}
+
+%h2{
+    @extend %heading;
+    font-size: $h2-font;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+%h3{
+    @extend %heading;
+    font-size: $h3-font;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+%h4{
+    @extend %heading;
+    font-size: $h4-font;
+    font-weight: 600;
+    line-height: 1.37;
+}
+
+%h5{
+    @extend %heading;
+    font-size: $h5-font;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+%h6{
+    @extend %heading;
+    font-size: $h6-font;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+%flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

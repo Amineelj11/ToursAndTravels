@@ -1,0 +1,381 @@
+
+/*---==================
+    03. Hero css 
+=================----*/
+
+/* Hero Content */ 
+
+.hero-content{
+    & h1{
+        font: 600 100px $font;
+        line-height: 1.1;
+        text-transform: capitalize;
+        @media #{$lp}{
+            font-size: 80px;
+        }
+        @media #{$lg}{
+            font-size: 75px;
+        }
+        @media #{$xm}{
+            font-size: 55px;
+            line-height: 1.3;
+        }
+        @media #{$xss}{
+            font-size: 40px;
+            line-height: 50px;
+        }
+    }
+}
+
+/* Hero One */ 
+
+.hero-wrapper{
+    & .container-fluid{
+        padding-left: 170px;
+        padding-right: 170px;
+        @media #{$lp}{
+            padding-left: 120px;
+            padding-right: 120px;
+        }
+        @media #{$lm}{
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+    & .single-slider{
+        padding: 195px 0 90px;
+    }
+    & .hero-content{
+        position: relative;
+        padding-left: 30px;
+        z-index: 1;
+        @media #{$lp}{
+            padding-left: 0;
+        }
+        @media #{$lm}{
+            padding-left: 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        @media #{$xm}{
+            padding-left: 0;
+        }
+        & h1{
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+        & .text-button{
+            max-width: 600px;
+            @media #{$lm}{
+                margin: auto;
+                text-align: left;
+            }
+            @media #{$xs}{
+                text-align: center;
+                flex-direction: column;
+            }
+            & p{
+                max-width: 290px;
+            }
+            & .hero-button{
+                margin-left: 70px;
+                @media #{$lp}{
+                    margin-left: 30px;
+                }
+                @media #{$xs}{
+                    margin-left: 0px;
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+    & .hero-image{
+        @media #{$lp}{
+            margin-left: 0;
+        }
+        @media #{$lm}{
+            text-align: center;
+        }
+        & img{
+            @include border-radius(12px);
+            @media #{$lp}{
+                max-width: 100%;
+            }
+            @media #{$lm}{
+                max-width: 100%;
+                margin: auto;
+            }
+        }
+    }
+}
+
+/* Hero Two */ 
+
+.hero-wrapper-two{
+    & .single-slider{
+        padding: 355px 0 270px;
+        position: relative;
+        z-index: 1;
+        @media #{$xs}{
+            padding: 255px 0 220px;
+        }
+        & .image-layer{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: all 1.4s cubic-bezier(0.7, 0, 0.3, 1);
+            @include transform(scale(1.2));
+            z-index: -1;
+            &:after{
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: '';
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(129.29deg, rgba(0, 0, 0, 0.6) 16.77%, rgba(0, 0, 0, 0.3) 74.33%);
+                z-index: -1;
+            }
+        }
+        &.slick-current{
+            & .image-layer{
+                @include transform(scale(1));
+            }
+        }
+    }
+    & .hero-content{
+        position: relative;
+        & .ribbon{
+            @include border-radius(10px);
+            margin-bottom: 20px;
+        }
+        & h1{
+            text-transform: capitalize;
+            margin-bottom: 30px;
+        }
+        & .hero-button{
+            & .main-btn{
+                &.primary-btn{
+                    & i{
+                        @extend %heading;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Hero Three */ 
+
+.hero-wrapper-three{ 
+    position: relative;
+    & .hero-arrows{
+        position: absolute;
+        top: 50%;
+        @include transform(translateY(-50%));
+        right: 16%;
+        z-index: 2;
+        & .slick-arrow{
+            width: 65px;
+            height: 65px;
+            @include border-radius(50%);
+            border: 1px solid #fff;
+            @extend %flex-center;
+            cursor: pointer;
+            font-size: 18px;
+            margin-bottom: 20px;
+            @extend %white-color;
+            @include transition(.3s);
+            &:hover{
+                @extend %white-bg;
+                @extend %primary-color;
+            }
+            &.next{
+                margin-bottom: 0;
+            }
+        }
+    }
+    & .single-slider{
+        padding: 195px 0 140px;
+        position: relative;
+        z-index: 1;
+        @media #{$lm}{
+            padding: 150px 0;
+        }
+        & .image-layer{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: all 1.4s cubic-bezier(0.7, 0, 0.3, 1);
+            @include transform(scale(1.2));
+            z-index: -1;
+            &:after{
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: '';
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(129.29deg, rgba(0, 0, 0, 0.6) 16.77%, rgba(0, 0, 0, 0.3) 74.33%);
+                z-index: -1;
+            }
+        }
+        &.slick-current{
+            & .image-layer{
+                @include transform(scale(1));
+            }
+        }
+    }
+    & .hero-content{
+        & span.sub-title{
+            margin-bottom: 22px;
+        }
+        & h1{
+            text-transform: capitalize;
+            margin-bottom: 50px;
+        }
+        & .hero-button{
+            & .main-btn{
+                margin-bottom: 10px;
+                &:not(:last-child){
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
+
+/* Hero Four */ 
+
+.hero-wrapper-four{
+    padding: 180px 0 100px;
+    & .shape{
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    & .hero-content{
+        & span.sub-title{
+            margin-bottom: 30px;
+        }
+        & h1{
+            margin-bottom: 35px;
+        }
+        & p{
+            font-size: 18px;
+            line-height: 28px;
+            padding-left: 25px;
+            border-left: 3px solid $primary-color;
+            margin-bottom: 55px;
+        }
+        & .hero-search-form{
+            position: relative;
+            z-index: 1;
+            margin-right: -434px;
+            @media #{$lm}{
+                margin-right: 0;
+            }
+        }
+        & .avatar-box{
+            & img{
+                margin-right: 15px;
+                margin-bottom: 20px;
+                @media #{$xss}{
+                    margin-right: 10px;
+                }
+            }
+            & span{
+                margin-bottom: 20px;
+            }
+        }
+    }
+    & .hero-image{
+        margin-right: -165px;
+        height: 100%;
+        @media #{$lp}{
+            margin-right: 30px;
+        }
+        @media #{$lg}{
+            margin-right: 30px;
+        }
+        & img{
+            width: 100%;
+            height: 100%;
+            border-radius: 287.5px 287.5px 0px 0px;
+            object-fit: cover;
+        }
+    }
+}
+
+.hero-search-form{
+    padding: 30px 30px;
+    position: relative;
+    @extend %white-bg;
+    @include border-radius(10px);
+    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.07);
+    & .booking-form-two{
+        gap: 20px;
+        justify-content: space-between;
+        @media #{$lm}{
+            justify-content: center;
+        }
+        & .form_group{
+            width: 18%;
+            @media #{$lm}{
+                width: 48%;
+            }
+            @media #{$xs}{
+                width: 100%;
+            }
+        }
+        & .booking-btn{
+            padding: 17px 19px;
+        }
+    }
+}
+
+
+/* Page Banner  */ 
+
+.page-banner{
+    & .page-banner-content{
+        & h1{
+            margin-bottom: 20px;
+            @media #{$lm}{
+                font-size: 52px;
+            }
+            @media #{$xs}{
+                font-size: 32px;
+            }
+            @media #{$sm}{
+                font-size: 42px;
+            }
+        }
+        & ul.breadcrumb-link{
+            & li{
+                display: inline-block;
+                font-size: 24px;
+                @media #{$xs}{
+                    font-size: 17px;
+                }
+                &:not(:last-child){
+                    &:after{
+                        display: inline-block;
+                        content: '\f105';
+                        font-weight: 400;
+                        font-family: 'Font Awesome 5 Pro';
+                        margin-left: 20px;
+                        margin-right: 13px;
+                    }
+                }
+                &.active{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

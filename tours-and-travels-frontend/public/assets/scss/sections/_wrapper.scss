@@ -1,0 +1,103 @@
+
+
+
+/*---==================
+    19. Wrapper css 
+=================----*/
+
+.overlay{
+    position: relative;
+    z-index: 1;
+    &:after{
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: -1;
+    }
+}
+
+.black-bg{
+    & .sub-title{
+        background-color: rgba(247, 146, 30, 0.1);
+        @extend %secondary-color;
+    }
+}
+
+.skill-wrapper{
+    padding: 40px 45px 34px;
+    @extend %white-bg;
+    @include border-radius(10px);
+    box-shadow: 0px 10px 60px rgba(28, 35, 31, 0.07);
+    display: inline-flex;
+    @media #{$xss}{
+        flex-direction: column;
+    }
+    @media #{$lm}{
+        padding: 40px 30px 34px;
+    }
+}
+
+.faq-wrapper{
+    position: relative;
+    margin-top: -300px;
+}
+
+.fun-wrapper{
+    position: relative;
+    margin-top: -160px;
+    @extend %primary-bg;
+    @include border-radius(30px);
+}
+
+.reviews-wrapper{
+    border: 1px solid rgba(29, 35, 31, 0.1);
+    @include border-radius(7px);
+    & .reviews-inner-box{
+        display: flex;
+        align-items: center;
+        @media #{$xs}{
+            flex-wrap: wrap;
+        }
+        & .rating-value{
+            text-align: center;
+            width: 40%;
+            padding: 30px 40px 35px;
+            border: 1px solid rgba(29, 35, 31, 0.1);
+            @media #{$xs}{
+                width: 100%;
+            }
+            & .rate-score{
+                font: 500 130px $font;
+                line-height: 1;
+                @extend %secondary-color;
+            }
+            & .ratings{
+                margin-bottom: 20px;
+            }
+            & span.reviews{
+                padding: 7px 20px;
+                @include border-radius(7px);
+                @extend %primary-bg;
+                @extend %white-color;
+                font-weight: 500;
+                line-height: 23px;
+            }
+        }
+        & .reviews-progress{
+            padding: 20px 60px;
+            width: 60%;
+            @media #{$xs}{
+                width: 100%;
+            }
+            & .single-progress-bar{
+                &:not(:last-child){
+                    margin-bottom: 38px;
+                }
+            }
+        }
+    }
+}

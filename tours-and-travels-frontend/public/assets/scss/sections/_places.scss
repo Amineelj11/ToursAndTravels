@@ -1,0 +1,441 @@
+
+/*---==================
+    02. Places css 
+=================----*/
+
+.place-slider{
+    margin-left: -15px;
+    margin-right: -15px;
+    & .slick-slide{
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}
+
+.related-tour-place{
+    & .place-arrows{
+        display: flex;
+        justify-content: flex-end;
+        @media #{$xs}{
+            justify-content: flex-start;
+        }
+        & .slick-arrow{
+            color: #B8B8B8;
+            cursor: pointer;
+            font-size: 24px;
+            z-index: 1;
+            @include transition(.3s);
+            &.prev{
+                margin-right: 20px;
+            }
+            &:hover{
+                @extend %heading;
+            }
+        }
+    }
+}
+
+
+.single-place-item{
+    & .place-img{
+        & img{
+            width: 100%;
+            @include border-radius(15px);
+        }
+    }
+    & .place-content{
+        position: relative;
+        margin-left: 25px;
+        margin-right: 25px;
+        margin-top: -60px;
+        @media #{$xm}{
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        & .info{
+            padding: 30px 40px 28px;
+            @extend %white-bg;
+            box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.07);
+            @include border-radius(15px);
+            @media #{$xm}{
+                padding: 30px 20px 28px;
+            }
+            & ul.ratings{
+                margin-bottom: 10px;
+            }
+            & h4.title{
+                line-height: 28.6px;
+                margin-bottom: 12px;
+                &:hover{
+                    @extend %primary-color;
+                }
+            }
+            & p{
+                & i{
+                    @extend %primary-color;
+                    margin-right: 10px;
+                }
+            }
+            & .meta{
+                margin-top: 25px;
+                padding-top: 28px;
+                border-top: 1px solid rgba(29, 35, 31, 0.1);
+                & span{
+                    font: 400 16px $font;
+                    &:not(:last-child){
+                        margin-right: 25px;
+                        @media #{$xm}{
+                            margin-right: 15px;
+                        }
+                    }
+                    & i{
+                        margin-right: 10px;
+                        @extend %primary-color;
+                    }
+                    & a{
+                        font: 500 16px $font;
+                        @extend %black-color;
+                        &:hover{
+                            @extend %primary-color;
+                        }
+                        & i{
+                            @extend %black-color;
+                            margin-right: 0;
+                            margin-left: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.single-place-item-two{
+    & .place-img{
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        & img{
+            width: 100%;
+            @include border-radius(12px);
+        }
+        & .item-overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 100%);
+            @include border-radius(12px);
+        }
+        & .tour-count{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font: 500 14px $font;
+            padding: 5px 10px;
+            @include border-radius(5px);
+            line-height: 18px;
+            @extend %white-color;
+            @extend %secondary-bg;
+        }
+        & .place-content{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 100%);
+            @include border-radius(12px);
+            padding: 25px 30px;
+            display: flex;
+            align-items: flex-end;
+            & .info{
+                & p.price{
+                    font: 600 16px $font;
+                }
+            }
+        }
+    }
+}
+
+
+.single-place-item-three{
+    @extend %gray-bg;
+    padding: 10px 10px 0;
+    @include border-radius(50px);
+    @include transition(.3s);
+    &:hover{
+        @extend %white-bg;
+        box-shadow: 0px 10px 60px 30px rgba(0, 0, 0, 0.05);
+        & .place-content{
+            & h4.title{
+                @extend %primary-color;
+            }
+            & .meta{
+                & .icon-btn{
+                    @extend %primary-bg;
+                    @extend %white-color;
+                }
+            }
+        }
+    }
+    & .place-img{
+        & img{
+            width: 100%;
+            @include border-radius(40px);
+        }
+    }
+    & .place-content{
+        padding: 20px;
+        & h4.title{
+            font: 500 20px $font;
+            line-height: 26px;
+            margin-bottom: 5px;
+        }
+        & p.location{
+            margin-bottom: 5px;
+            & i{
+                margin-right: 5px;
+            }
+        }
+        & .meta{
+            padding-top: 15px;
+            border-top: 1px solid rgba(29, 35, 31, 0.1);
+            display: flex;
+            align-items: center;
+            & span{
+                & i{
+                    margin-right: 5px;
+                }
+            }
+            & .icon-btn{
+                width: 40px;
+                height: 40px;
+                @include border-radius(50%);
+                @extend %flex-center;
+                font-size: 14px;
+                @extend %white-bg;
+                margin-left: auto;
+            }
+        }
+    }
+}
+
+
+.tour-title-wrapper{
+    & .tour-title{
+        & h3.title{
+            font-size: 35px;
+            line-height: 45px;
+            margin-bottom: 10px;
+        }
+        & p{
+            font-weight: 400;
+            & i{
+                @extend %primary-color;
+                margin-right: 8px;
+            }
+        }
+    }
+    & .tour-widget-info{
+        display: flex;
+        justify-content: flex-end;
+        @media #{$lm}{
+            justify-content: flex-start;
+        }
+        @media #{$xs}{
+            flex-wrap: wrap;
+        }
+        & .info-box{
+            display: flex;
+            &:not(:last-child){
+                margin-right: 50px;
+                @media #{$xs}{
+                    margin-right: 20px;
+                }
+            }
+            & .icon{
+                flex: 0 0 auto;
+                width: 45px;
+                margin-right: 20px;
+                @extend %primary-color;
+                font-size: 50px;
+            }
+            & .info{
+                & h4{
+                    line-height: 25px;
+                    & span{
+                        display: block;
+                        font-weight: 300;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.tour-area-nav{
+    border-top: 1px solid rgba(29, 35, 31, 0.1);
+    border-bottom: 1px solid rgba(29, 35, 31, 0.1);
+    & .share-nav{
+        display: flex;
+        justify-content: flex-end;
+        @media #{$xs}{
+            justify-content: flex-start;
+            margin-top: 20px;
+        }
+        & a{
+            padding: 14px 30px;
+            background-color: rgba(29, 35, 31, 0.1);
+            @include border-radius(40px);
+            font: 600 14px $font;
+            @extend %heading;
+            text-transform: uppercase;
+            line-height: 21px;
+            & i{
+                margin-left: 5px;
+            }
+            &:not(:last-child){
+                margin-right: 15px;
+            }
+            &:hover{
+                @extend %primary-bg;
+                @extend %white-color;
+            }
+            @media #{$xs}{
+                padding: 14px 10px;
+            }
+        }
+    }
+}
+
+
+.tour-details-wrapper{
+    & .place-content-wrap{
+        & h3.title{
+            font: 500 38px $font;
+            margin-bottom: 15px;
+            @media #{$xs}{
+                font-size: 24px;
+                line-height: 35px;
+            }
+        }
+        & > p{
+            margin-bottom: 45px;
+        }
+        & h4{
+            font: 500 27px $font;
+            margin-bottom: 5px;
+        }
+        & .check-list{
+            margin-top: -20px;
+            @media #{$xm}{
+                margin-top: 0;
+                margin-bottom: 30px;
+            }
+        }
+    }
+    & .map-box{
+        & iframe{
+            height: 475px;
+        }
+    }
+}
+
+
+.days-area{
+    & .nav-tabs{
+        @extend %gray-bg;
+        @include border-radius(7px);
+        border-bottom: none;
+        justify-content: space-between;
+        & .nav-link{
+            font: 500 18px $font;
+            border: none;
+            background-color: transparent;
+            color: #919191;
+            padding: 15px 30px;
+            &.active{
+                @extend %primary-color;
+            }
+        }
+    }
+    & .content-box{
+        & p{
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.destination-details-wrapper{
+    & .destination-info{
+        & h3.title{
+            font-size: 48px;
+            line-height: 56px;
+            margin-bottom: 25px;
+            @media #{$xm}{
+                font-size: 27px;
+                line-height: 35px;
+            }
+        }
+        & .meta{
+            margin-bottom: 10px;
+            & span{
+                font: 400 18px $font;
+                margin-bottom: 10px;
+                &:not(:first-child){
+                    margin-left: 20px;
+                }
+                &.location{
+                    & i{
+                        @extend %primary-color;
+                        margin-right: 10px;
+                    }
+                }
+                & .ratings{
+                    display: flex;
+                    align-items: center;
+                    gap: 7px;
+                    & li{
+                        & i{
+                            font-size: 14px;
+                        }
+                        & a{
+                            font-size: 22px;
+                        }
+                    }
+                }
+            }
+        }
+        & p{
+            margin-bottom: 38px;
+        }
+        & h3{
+            margin-bottom: 20px;
+        }
+        & .features-list{
+            display: flex;
+            flex-wrap: wrap;
+            & li{
+                margin-bottom: 20px;
+                &:not(:last-child){
+                    margin-right: 20px;
+                }
+                & span{
+                    padding: 15px 20px;
+                    @extend %white-bg;
+                    font: 500 18px $font;
+                    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.15);
+                    @include border-radius(10px);
+                    & i{
+                        margin-right: 15px;
+                        @extend %secondary-color;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,42 @@
+
+// Font Family
+
+$font: 'Prompt', sans-serif;
+
+
+// Font Size
+
+$h1-font: 85px;
+$h2-font: 48px;
+$h3-font: 24px;
+$h4-font: 22px;
+$h5-font: 20px;
+$h6-font: 18px;
+
+// Colors
+
+$black-color: #1D231F;
+
+$title-color: #1C231F;
+
+$text-color: #484848;
+
+$primary-color: #63AB45;
+
+$secondary-color: #F7921E;
+
+$gray-color:#F9F9F7;
+
+$white: #fff;
+
+// Responsive Variables
+
+$xl: 'only screen and (min-width: 1200px)';
+$lp: 'only screen and (min-width: 1200px) and (max-width: 1600px)';
+$lm : '(max-width: 1199px)';
+$lg : 'only screen and (min-width: 992px) and (max-width: 1199px)';
+$xm:'(max-width: 991px)';
+$md:'only screen and (min-width: 768px) and (max-width: 991px)';
+$xs:'(max-width: 767px)';
+$xss:'(max-width: 575px)';
+$sm: 'only screen and (min-width: 576px) and (max-width: 767px)';

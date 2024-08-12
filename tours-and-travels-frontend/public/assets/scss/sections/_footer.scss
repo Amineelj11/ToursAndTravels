@@ -1,0 +1,191 @@
+
+/*---==================
+    17. Footer css 
+=================----*/
+
+
+.black-bg{
+    & .footer-copyright,
+    & .footer-widget{
+        color: #E1E1E1;
+    }
+    .footer-widget{
+        & h4.widget-title{
+            @extend %white-color;
+        }
+    }
+    & .footer-top{
+        & .social-box{
+            & ul.social-link{
+                & li{
+                    & a{
+                        background-color: rgba(255, 255, 255, 0.1);
+                        color: #B1B6B3;
+                        &:hover{
+                            @extend %primary-bg;
+                            @extend %white-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    & .single-info-item{
+        & .info{
+            & span.title{
+                @extend %white-color;
+            }
+            & p{
+                color: #E1E1E1;
+                &:hover{
+                    & a{
+                        @extend %primary-color;
+                    }
+                }
+            }
+        }
+    }
+    & .single-cta-item{
+        & .content{
+            & h3.title{
+                @extend %white-color;
+            }
+        }
+    }
+    & .footer-cta{
+        border-color: rgba(217, 217, 217, 0.1);
+    }
+    & .footer-top,
+    & .footer-copyright{
+        border-color: rgba(217, 217, 217, 0.1);
+    }
+}
+
+
+
+.footer-top{
+    border-top: 1px solid rgba(29, 35, 31, 0.1);
+    border-bottom: 1px solid rgba(29, 35, 31, 0.1);
+    & .social-box{
+        & ul.social-link{
+            & li{
+                &:not(:last-child){
+                    margin-left: 5px;
+                }
+                & a{
+                    width: 45px;
+                    height: 45px;
+                    @include border-radius(50%);
+                    @extend %flex-center;
+                    background-color: rgba(29, 35, 31, 0.1);
+                    @extend %primary-color;
+                    &:hover{
+                        @extend %primary-bg;
+                        @extend %white-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer-cta{
+    border-bottom: 1px solid rgba(29, 35, 31, 0.1);
+}
+
+
+.footer-widget{
+    @media #{$xm}{
+        font-size: 14px;
+    }
+    & h4.widget-title{
+        margin-bottom: 20px;
+    }
+    & .footer-content{
+        & p{
+            margin-bottom: 30px;
+        }
+    }
+}
+
+.service-nav-widget{
+    & .footer-content{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        & .footer-widget-nav{
+            width: 45%;
+        }
+        & .footer-widget-nav{
+            & li{
+                &:not(:last-child){
+                    margin-bottom: 10px;
+                }
+                & a{
+                    &:hover{
+                        @extend %primary-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.footer-newsletter-widget{
+    & .footer-content{
+        & form{
+            & .form_control{
+                padding: 15px 20px 15px 25px;
+                @extend %white-bg;
+                border-radius: 7px;
+                font-weight: 400;
+                box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.1);
+                @include placeholder{
+                    color: $title-color;
+                }
+            }
+            & label{
+                position: absolute;
+                top: 15px;
+                right: 20px;
+                @extend %secondary-color;
+            }
+        }
+    }
+    
+}
+
+
+.footer-copyright{
+    padding: 20px 0;
+    border-top: 1px solid rgba(29, 35, 31, 0.1);
+    & .footer-text{
+        @media #{$xm}{
+            text-align: center;
+            margin-bottom: 15px;
+        }
+    }
+    & .footer-nav{
+        @media #{$xm}{
+            text-align: center;
+        }
+        & ul{
+            & li{
+                display: inline-block;
+                &:not(:last-child){
+                    margin-right: 35px;
+                    @media #{$xm}{
+                        margin-left: 10px;
+                        margin-right: 10px;
+                    }
+                }
+                & a{
+                    &:hover{
+                        @extend %primary-color;
+                    }
+                }
+            }
+        }
+    }
+}

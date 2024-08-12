@@ -1,0 +1,265 @@
+
+/*---==================
+    07. Services css 
+=================----*/
+
+.single-service-item{
+    padding: 20px 20px 20px;
+    @extend %white-bg;
+    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.07);
+    @include border-radius(10px);
+    border: 1px solid transparent;
+    @include transition(.3s);
+    &:hover{
+        border-color: $primary-color;
+        & .content{
+            & .icon-btn{
+                @extend %secondary-bg;
+                @extend %white-color;
+            }
+        }
+    }
+    & .content{
+        position: relative;
+        padding: 20px;
+        & h3.title{
+            margin-bottom: 7px;
+        }
+        & p{
+            margin-bottom: 15px;
+        }
+        & .meta{
+            & span{
+                line-height: 1;
+                &:not(:last-child){
+                    margin-right: 30px;
+                    @media #{$lm}{
+                        margin-right: 15px;
+                    }
+                }
+                & i{
+                    font-size: 24px;
+                }
+            }
+        }
+        & .icon-btn{
+            position: absolute;
+            bottom: -27px;
+            right: 20px;
+            width: 55px;
+            height: 55px;
+            @include border-radius(50%);
+            @extend %white-bg;
+            font-size: 18px;
+            @extend %heading;
+            @extend %flex-center;
+            box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.15);
+        }
+    }
+    & .img-holder{
+        & img{
+            width: 100%;
+            @include border-radius(10px);
+        }
+    }
+}
+
+.single-service-item-two{
+    @include border-radius(20px);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background-color: #101311;
+    padding: 50px 50px 40px;
+    @media #{$xm}{
+        padding: 50px 30px 40px;
+    }
+    &:hover{
+        & .hover-bg{
+            visibility: visible;
+            opacity: 1;
+        }
+        & .content{
+            & .icon{
+                & i{
+                    @extend %primary-color;
+                }
+            }
+        }
+    }
+    & .hover-bg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        visibility: hidden;
+        opacity: 0;
+        @include transition(.4s);
+        &:after{
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: '';
+            width: 100%;
+            height: 100%;
+            background-color: rgba(16, 19, 17, 0.75);
+            z-index: -1;
+        }
+    }
+    & .content{
+        & .icon{
+            margin-bottom: 25px;
+            & i{
+                @extend %secondary-color;
+                font-size: 80px;
+            }
+        }
+        & h3.title{
+            margin-bottom: 15px;
+            @extend %white-color;
+        }
+        & p{
+            margin-bottom: 25px;
+            @extend %white-color;
+        }
+        & .btn-link{
+            @extend %white-color;
+        }
+    }
+}
+
+.single-service-item-three{
+    padding: 35px 30px 40px;
+    @include border-radius(10px);
+    @extend %gray-bg;
+    @include transition(.3s);
+    &:hover{
+        @extend %white-bg;
+        box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.1);
+    }
+    & .content{
+        & h3.title{
+            margin-bottom: 10px;
+        }
+        & p{
+            margin-bottom: 23px;
+        }
+        & img{
+            width: 100%;
+            @include border-radius(10px);
+            margin-bottom: 20px;
+        }
+        & .meta{
+            border-top: rgba(29, 35, 31, 0.1);
+            padding-top: 30px;
+            display: flex;
+            align-items: center;
+            & span{
+                line-height: 1;
+                &.icon{
+                    & i{
+                        font-size: 24px;
+                    }
+                    &:not(:last-child){
+                        margin-right: 30px;
+                        @media #{$xm}{
+                            margin-right: 20px;
+                        }
+                    }
+                }
+                &.rate{
+                    @extend %white-bg;
+                    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.1);
+                    @include border-radius(7px);
+                    font-weight: 500;
+                    @extend %heading;
+                    padding: 10px 13px;
+                    line-height: 14px;
+                    margin-left: auto;
+                    & i{
+                        @extend %secondary-color;
+                        margin-right: 3px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.single-service-item-four{
+    padding: 10px 10px 20px;
+    background-color: #101311;
+    @include border-radius(10px);
+    @include transition(.3s);
+    &:hover{
+        @extend %white-bg;
+        & .content{
+            
+            & h3.title{
+                @extend %heading;
+            }
+            & p{
+                color: $text-color;
+            }
+            & .icon-btn{
+                @extend %secondary-bg;
+                @extend %white-color;
+            }
+            & .meta{
+                & span{
+                    color: $text-color;
+                }
+            }
+            & .action-btn{
+                border-color: rgba(29, 35, 31, 0.1);
+            }
+        }
+    }
+    & .img-holder{
+        & img{
+            width: 100%;
+            @include border-radius(10px);
+        }
+    }
+    & .content{
+        position: relative;
+        padding: 30px 20px 0;
+        & .icon-btn{
+            position: absolute;
+            right: 20px;
+            top: -28px;
+            width: 55px;
+            height: 55px;
+            @include border-radius(50%);
+            font-size: 18px;
+            @extend %flex-center;
+            @extend %secondary-color;
+            @extend %white-bg;
+        }
+        & h3.title{
+            @extend %white-color;
+            margin-bottom: 10px;
+        }
+        & p{
+            color: rgba(255, 255, 255, 0.65);
+            margin-bottom: 18px;
+        }
+        & .meta{
+            padding-bottom: 30px;
+            & span{
+                color: rgba(255, 255, 255, 0.65);
+                font-size: 28px;
+                &:not(:first-child){
+                    margin-left: 35px;
+                }
+            }
+        }
+        & .action-btn{
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    }
+}

@@ -1,0 +1,127 @@
+
+/*---==================
+    11. Booking css 
+=================----*/
+
+.booking-form-wrapper{
+    padding: 33px 60px 40px;
+    @extend %white-bg;
+    @include border-radius(12px);
+    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.07);
+    margin-top: -85px;
+    position: relative;
+    @media #{$xs}{
+        padding: 33px 30px 40px;
+    }
+}
+
+
+.booking-form{
+    & label{
+        position: absolute;
+        top: 18px;
+        right: 23px;
+        & i{
+            font-size: 18px;
+            @extend %primary-color;
+        }
+    }
+    & .nice-select,
+    & .form_control{
+        padding: 19px 25px;
+        @extend %gray-bg;
+        border: 1px solid rgba(29, 35, 31, 0.1);
+        @include border-radius(7px);
+        margin-bottom: 20px;
+        line-height: 25px;
+        font-weight: 500;
+        color: #000;
+        @include transition(.3s);
+        @include placeholder{
+            color: #000;
+        }
+        &:focus{
+            box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.07);
+            border-color: transparent;
+            @extend %white-bg;
+        }
+    }
+    & .nice-select{
+        &:after{
+            right: 25px;
+            font-size: 18px;
+            @extend %primary-color;
+        }
+    }
+}
+
+.booking-form-two{
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 30px;
+    @media #{$lp}{
+        gap: 15px;
+        justify-content: space-between;
+    }
+    @media #{$lm}{
+        gap: 15px;
+        justify-content: center;
+    }
+    & .form_group{
+        flex: 0 0 auto;
+        width: 18.5%;
+        @media #{$lm}{
+            width: 48%;
+        }
+        @media #{$xm}{
+            width: 100%;
+        }
+    }
+    & .form_group{
+        & > span{
+            font: 500 18px $font;
+            margin-bottom: 10px;
+        }
+        & label{
+            position: absolute;
+            top: 55px;
+            right: 20px;
+            @extend %primary-color;
+        }
+        
+    }
+    & .nice-select,
+    & .form_control{
+        padding: 16px 25px;
+        line-height: 26px;
+        padding: 16px 25px;
+        border: 1px solid rgba(28, 35, 31, 0.15);
+        @include border-radius(50px);
+    }
+    & .nice-select{
+        &:after{
+            right: 20px;
+        }
+    }
+    & .booking-btn{
+        width: 100%;
+        border: 1px solid rgba(28, 35, 31, 0.15);
+        background-color: transparent;
+        padding: 17px 30px;
+        @include border-radius(50px);
+        line-height: 25px;
+        font: 600 14px $font;
+        text-transform: uppercase;
+        @extend %heading;
+        @include transition(.3s);
+        &:hover{
+            border-color: transparent;
+            @extend %primary-bg;
+            @extend %white-color;
+        }
+        @media #{$lp}{
+            padding: 17px 15px;
+        }
+    }
+}

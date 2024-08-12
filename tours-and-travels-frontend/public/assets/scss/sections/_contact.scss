@@ -1,0 +1,72 @@
+
+/*---==================
+    16. Contact css 
+=================----*/
+
+
+/* Contact Info Item */
+
+.contact-info-item{
+    @extend %gray-bg;
+    @include border-radius(12px);
+    padding: 60px 70px 55px;
+    @media #{$lm}{
+        padding: 60px 30px 55px;
+    }
+    & .icon{
+        margin-bottom: 32px;
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+    }
+    & .info{
+        & span.title{
+            font-size: 20px;
+            line-height: 32px;
+            margin-bottom: 16px;
+        }
+        & p{
+            @extend %heading;
+            font-size: 22px;
+            line-height: 30.8px;
+            &:hover{
+                & a{
+                    @extend %primary-color;
+                }
+            }
+            @media #{$lm}{
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+/* Contact Form */ 
+
+.contact-form{
+    & .form_control{
+        @extend %gray-bg;
+        border: 1px solid rgba(29, 35, 31, 0.1);
+        @include border-radius(5px);
+        margin-bottom: 30px;
+        padding: 20px 35px;
+        line-height: 28px;
+        font-size: 18px;
+        @include placeholder{
+            // @extend %heading;
+        }
+    }
+}
+
+/* Contact Page Map */
+
+.contact-page-map{
+    & .map-box{
+        & iframe{
+            height: 785px;
+            @media #{$xs}{
+                height: 585px;
+            }
+        }
+    }
+}

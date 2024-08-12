@@ -1,0 +1,354 @@
+/*---==================
+    14. Shop css 
+=================----*/
+
+.page-item-filter {
+  & .show-text {
+    @media #{$xs} {
+      text-align: center;
+    }
+    & h6 {
+      font-weight: 400;
+    }
+  }
+  & .product-dropdown {
+    display: flex;
+    align-items: center;
+    @media #{$xs} {
+      justify-content: center;
+    }
+    & span.title {
+      font: 400 18px $font;
+      color: #000;
+      margin-right: 15px;
+      margin-bottom: 20px;
+    }
+    & .nice-select {
+      border: 1px solid rgba(29, 35, 31, 0.1);
+      width: 170px;
+      padding: 11px 20px;
+      line-height: 24px;
+      @include border-radius(22px);
+      font: 300 14px $font;
+      margin-bottom: 20px;
+      &:after {
+        right: 20px;
+        top: 15px;
+      }
+    }
+  }
+}
+
+.single-product-item {
+  &:hover {
+    & .img-holder {
+      & .content-hover {
+        visibility: visible;
+        opacity: 1;
+        & .main-btn {
+          @include transform(translateY(0));
+        }
+      }
+    }
+  }
+  & .img-holder {
+    position: relative;
+    overflow: hidden;
+    & img {
+      width: 100%;
+    }
+    & .content-hover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 30px;
+      visibility: hidden;
+      opacity: 0;
+      @include transition(0.4s);
+      & .main-btn {
+        @include transform(translateY(-20px));
+      }
+    }
+    & .tag {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 1;
+      & span {
+        font: 500 14px $font;
+        padding: 5px 10px;
+        @include border-radius(5px);
+        line-height: 18px;
+        @extend %white-color;
+        margin-bottom: 7px;
+        display: block;
+        &.off {
+          @extend %primary-bg;
+        }
+        &.feat {
+          @extend %secondary-bg;
+        }
+        &.best {
+          background-color: #f7451e;
+        }
+      }
+    }
+  }
+  & .content {
+    display: flex;
+    padding-top: 25px;
+    & .info {
+      & h4.title {
+        font-size: 20px;
+        margin-bottom: 5px;
+        &:hover {
+          @extend %primary-color;
+        }
+      }
+      & span.price {
+        font-weight: 400;
+        & .prev-price {
+          font-weight: 300;
+          text-decoration: line-through;
+          margin-right: 10px;
+        }
+      }
+    }
+    & .ratings {
+      margin-left: auto;
+    }
+  }
+}
+
+.product-gallery-area {
+  & .product-big-slider {
+    & .product-img {
+      & a {
+        display: block;
+      }
+      & img {
+        width: 100%;
+        @include border-radius(20px);
+      }
+    }
+  }
+  & .product-thumb-slider {
+    margin-left: -15px;
+    margin-right: -15px;
+    cursor: pointer;
+    @media #{$xss} {
+      margin-left: -12px;
+      margin-right: -12px;
+    }
+    & .product-img {
+      padding-left: 15px;
+      padding-right: 15px;
+      @media #{$xss} {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+      & img {
+        width: 100%;
+        @include border-radius(10px);
+      }
+    }
+  }
+}
+
+/*--==== Product Details ====--*/
+
+.product-details-wrapper {
+  & .product-info {
+    & h4.title {
+      font-size: 30px;
+      margin-bottom: 10px;
+      @media #{$xss} {
+        font-size: 20px;
+      }
+    }
+    & ul.ratings {
+      margin-bottom: 10px;
+      & li {
+        & a {
+          &:hover {
+            @extend %secondary-color;
+          }
+        }
+      }
+    }
+    & span.price {
+      font: 600 20px $font;
+      @extend %primary-color;
+      margin-bottom: 20px;
+    }
+    & P {
+      margin-bottom: 10px;
+    }
+    & .product-cart {
+      & ul {
+        & li {
+          display: inline-block;
+          margin-bottom: 10px;
+          & .quantity-input {
+            margin-inline-end: 15px;
+          }
+        }
+      }
+    }
+    & .product-meta {
+      border-bottom: 1px solid rgba(11, 61, 44, 0.1);
+      & li {
+        display: flex;
+        align-items: center;
+        & span {
+          font: 600 16px $font;
+          width: 30%;
+        }
+        & a {
+          font-weight: 400;
+          color: #484848;
+          &:hover {
+            @extend %secondary-color;
+          }
+          &:before {
+            display: inline-block;
+            content: ":";
+            margin-inline-end: 10px;
+            margin-inline-start: 10px;
+          }
+        }
+      }
+    }
+    & ul.social-link {
+      & li {
+        & span {
+          font: 600 16px $font;
+          margin-inline-end: 25px;
+        }
+        & a {
+          width: 40px;
+          height: 40px;
+          @include border-radius(50%);
+          @extend %flex-center;
+          background-color: rgba(247, 146, 30, 0.1);
+          font-size: 14px;
+          margin-inline-end: 5px;
+          &:hover {
+            @extend %secondary-bg;
+            @extend %white-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*--==== Description Tabs ====--*/
+
+.description-tabs {
+  & ul.nav {
+    & .nav-item {
+      &:first-child {
+        & .nav-link {
+          padding-left: 0px;
+        }
+      }
+    }
+  }
+  & .nav-link {
+    position: relative;
+    padding: 0 30px 20px;
+    font: 400 18px $font;
+    border-bottom: 2px solid transparent;
+    margin-bottom: 20px;
+    color: $text-color;
+    @media #{$lm} {
+      padding: 0 15px 20px;
+      font-size: 16px;
+    }
+    &:hover,
+    &.active {
+      @extend %primary-color;
+      border-color: $primary-color;
+    }
+  }
+}
+
+/*--==== Description Wrapper ====--*/
+
+.description-wrapper {
+  & .content-box {
+    & p {
+      margin-bottom: 20px;
+    }
+    & ul.check-style-one {
+      & li {
+        & i {
+          font-size: 16px;
+          @extend %secondary-bg;
+        }
+      }
+    }
+  }
+}
+
+/*--==== Review Area ====--*/
+
+.review-form-area {
+  @extend %gray-bg;
+  padding: 55px 65px;
+  @media #{$lm} {
+    padding: 55px 40px;
+  }
+  & h3.title {
+    font-size: 27px;
+    margin-bottom: 5px;
+    @media #{$xs} {
+      font-size: 22px;
+    }
+  }
+  & P {
+    margin-bottom: 22px;
+    & img {
+      margin-inline-start: 10px;
+    }
+  }
+}
+
+.review-form {
+  & .form_control {
+    padding: 20px 25px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(11, 61, 44, 0.1);
+    @include border-radius(10px);
+    line-height: 1.5;
+    @include placeholder {
+      color: #0b3d2c;
+    }
+  }
+}
+
+/*--==== Quantity-input ====--*/
+
+.quantity-input {
+  display: flex;
+  align-items: center;
+  & button {
+    width: 60px;
+    height: 56px;
+    background-color: transparent;
+    border: 1px solid rgba(11, 61, 44, 0.1);
+  }
+  & input {
+    width: 60px;
+    height: 56px;
+    border: 1px solid rgba(11, 61, 44, 0.1);
+    text-align: center;
+  }
+}

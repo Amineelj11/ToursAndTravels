@@ -1,0 +1,71 @@
+
+/*---==================
+    08. Activity css 
+=================----*/
+
+.activity-wrapper-bgc{
+    padding: 100px 30px 50px;
+    @media #{$xs}{
+        padding: 100px 0 50px;
+    }
+}
+
+.activity-nav-tab{
+    padding: 40px 35px 25px;
+    @extend %white-bg;
+    @include border-radius(12px);
+    @media #{$lg}{
+        padding: 40px 15px 25px;
+    }
+    & .nav-tabs{
+        display: flow-root;
+        border-bottom: none;
+        & li{
+            display: block;
+            & a{
+                padding: 16px 25px;
+                font: 500 22px $font;
+                @extend %heading;
+                margin-bottom: 15px;
+                @include border-radius(5px);
+                @extend %gray-bg;
+                border: none;
+                &.active{
+                    @extend %white-color;
+                    @extend %secondary-bg;
+                }
+                @media #{$lg}{
+                    padding: 10px 15px;
+                }
+            }
+        }
+    }
+}
+
+.activity-content-box{
+    @media #{$xs}{
+        margin-bottom: 40px;
+    }
+    & .icon{
+        margin-bottom: 10px;
+        & i{
+            font-size: 85px;
+            @extend %primary-color;
+        }
+    }
+    & h3.title{
+        font: 500 27px $font;
+        margin-bottom: 25px;
+        @media #{$lg}{
+            font-size: 22px;
+        }
+    }
+    & p{
+        margin-bottom: 30px;
+    }
+    & ul.check-list{
+        & li{
+            @extend %white-color;
+        }
+    }
+}

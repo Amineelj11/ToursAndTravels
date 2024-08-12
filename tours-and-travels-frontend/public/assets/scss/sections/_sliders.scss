@@ -1,0 +1,172 @@
+/*---==================
+    18. Sliders css 
+=================----*/
+
+/* Slider Dots */
+
+ul.slick-dots {
+  position: relative !important;
+  li {
+    & button {
+      position: relative;
+      width: 20px;
+      height: 20px;
+      border: 1px solid transparent;
+      border-radius: 50%;
+      background: none;
+      &::before {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        @include transform(translate(-50%, -50%));
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        opacity: 1 !important;
+        @extend %primary-bg;
+      }
+    }
+    &.slick-active {
+      button {
+        border-color: $primary-color;
+      }
+    }
+  }
+}
+
+/* Hero Slider One */
+
+.hero-slider-one {
+  & .slick-arrow {
+    position: absolute;
+    top: 50%;
+    @include transform(translateY(-50%));
+    cursor: pointer;
+    z-index: 1;
+    width: 65px;
+    height: 65px;
+    @include border-radius(50%);
+    font-size: 18px;
+    @extend %flex-center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    @include transition(0.3s);
+    &.prev {
+      left: 70px;
+      @media #{$lp} {
+        left: 30px;
+      }
+    }
+    &.next {
+      right: 70px;
+      @media #{$lp} {
+        right: 30px;
+      }
+    }
+    &:hover {
+      @extend %secondary-bg;
+      @extend %white-color;
+      border-color: transparent;
+    }
+  }
+}
+
+/* Hero Slider Two */
+
+.hero-slider-two {
+  & .slick-arrow {
+    position: absolute;
+    top: 50%;
+    @include transform(translateY(-50%));
+    cursor: pointer;
+    z-index: 1;
+    width: 65px;
+    height: 65px;
+    @include border-radius(50%);
+    font-size: 18px;
+    @extend %flex-center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    @include transition(0.3s);
+    &.prev {
+      left: 40px;
+    }
+    &.next {
+      right: 40px;
+    }
+    &:hover {
+      @extend %secondary-bg;
+      @extend %white-color;
+      border-color: transparent;
+    }
+  }
+}
+
+.slider-active-4-item,
+.slider-active-5-item,
+.slider-active-3-item-dot,
+.slider-active-3-item {
+  margin-left: -15px;
+  margin-right: -15px;
+  @media #{$xs} {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+  & .slick-slide {
+    padding-left: 15px;
+    padding-right: 15px;
+    @media #{$xs} {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+  }
+}
+
+.slider-active-3-item-dot {
+  & .slick-dots {
+    margin-top: 45px;
+    text-align: center;
+  }
+}
+
+.recent-place-slider {
+  margin-left: -15px;
+  margin-right: -15px;
+  @media #{$xs} {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+  & .slick-slide {
+    padding-left: 15px;
+    padding-right: 15px;
+    @media #{$xs} {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+  }
+}
+
+/*--==== Partners Css ====--*/
+
+.partner-slider-one {
+  border-top: 1px solid rgba(28, 35, 31, 0.1);
+  margin-left: -15px;
+  margin-right: -15px;
+  @media #{$xss} {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+  & .slick-slide {
+    padding-left: 15px;
+    padding-right: 15px;
+    @media #{$xss} {
+      padding-left: -12px;
+      padding-right: -12px;
+    }
+  }
+}
+
+.slick-prev:before,
+.slick-next:before {
+  content: "";
+  display: none !important;
+}

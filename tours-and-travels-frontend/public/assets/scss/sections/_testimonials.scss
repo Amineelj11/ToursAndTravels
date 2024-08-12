@@ -1,0 +1,108 @@
+
+
+/*---==================
+    13. Testimonials css 
+=================----*/
+
+.quote-rating-box{
+    display: flex;
+    align-items: center;
+    & .icon{
+        flex: 0 0 auto;
+        width: 87px;
+        margin-inline-end: 40px;
+    }
+    & .ratings-box{
+        & h4{
+            margin-bottom: 6px;
+            @media #{$lp}{
+                font-size: 20px;
+            }
+            @media #{$xm}{
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+.author-thumb-title{
+    display: flex;
+    align-items: center;
+    & .author-thumb{
+        flex: 0 0 auto;
+        width: 80px;
+        margin-inline-end: 20px;
+        & img{
+            width: 100%;
+            @include border-radius(50%);
+        }
+    }
+    & .author-title{
+        & h3{
+            font-size: 27px;
+            margin-bottom: 7px;
+            @media #{$lp}{
+                font-size: 24px;
+            }
+            @media #{$xm}{
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+.gw-testimonial-item{
+    & .testimonial-inner-content{
+        & .quote-rating-box{
+            margin-bottom: 30px;
+        }
+        & > p{
+            font: 400 33px $font;
+            line-height: 46px;
+            @extend %heading;
+            margin-bottom: 35px;
+            @media #{$xs}{
+                font-size: 24px;
+                line-height: 35px;
+            }
+        }
+    }
+}
+
+.gw-testimonial-item-two{
+    @extend %white-bg;
+    padding: 40px 30px;
+    @include border-radius(15px);
+    & .testimonial-inner-content{
+        & .quote-rating-box{
+            margin-bottom: 30px;
+        }
+        & > p{
+            font: 400 18px $font;
+            line-height: 30px;
+            @extend %heading;
+            margin-bottom: 25px;
+        }
+    }
+}
+
+.testimonial-one_image-box{
+    margin-left: -44%;
+    @media #{$lm}{
+        margin-left: 0;
+    }
+    & img{
+        max-width: 753px;
+        @media #{$lp}{
+            max-width: 100%;
+        }
+        @media #{$lm}{
+            max-width: 100%;
+        }
+    }
+}
+
+.testimonial-section-two{
+    background: url(../images/bg/map2.png) no-repeat;
+    background-position: center center;
+}

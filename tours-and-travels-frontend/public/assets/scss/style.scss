@@ -1,0 +1,100 @@
+/*-----------------------------------------------------------------------------------
+
+    Template Name: Gowilds - Tours and Travel HTML Template
+    Template URI: site.com
+    Description: Gowilds is a modern Adventure Tours and Travel HTML Template designed for all activities, sports, hiking, or outdoor adventures.
+    Author: WebTend 
+    Author URI: https://webtend.net/
+    Version: 1.0
+
+--------------------------
+    CSS INDEX
+--------------------------
+
+    01. Common css 
+    02. Header css
+    03. Hero css
+    04. About css
+    05. Elements css
+    06. Features css
+    07. Services css
+    08. Activity css
+    09. We css
+    10. Gallery css
+    11. Booking css
+    12. Places css
+    13. Testimonial css
+    14. Shop css
+    15. Blog css
+    16. Contact css
+    17. Footer css
+    18. Sliders css
+    19. Wrapper css
+    
+-----------------------------------------------------------------------------------*/
+
+// Global variables
+@import 'variables';
+
+// Global Mixins
+@import 'mixin';
+
+// Global Extend
+@import 'extend';
+
+// common
+@import 'common';
+
+// Header
+@import 'sections/header';
+
+// Hero
+@import 'sections/hero';
+
+// About
+@import 'sections/about';
+
+// Elements
+@import 'sections/elements';
+
+// Features
+@import 'sections/features';
+
+// Services
+@import 'sections/services';
+
+// Activity
+@import 'sections/activity';
+
+// We
+@import 'sections/we';
+
+// Gallery
+@import 'sections/gallery';
+
+// Booking
+@import 'sections/booking';
+
+// Places
+@import 'sections/places';
+
+// Testimonials
+@import 'sections/testimonials';
+
+// Shop
+@import 'sections/shop';
+
+// Blog
+@import 'sections/blog';
+
+// Contact
+@import 'sections/contact';
+
+// Footer
+@import 'sections/footer';
+
+// Sliders
+@import 'sections/sliders';
+
+// Wrapper
+@import 'sections/wrapper';
