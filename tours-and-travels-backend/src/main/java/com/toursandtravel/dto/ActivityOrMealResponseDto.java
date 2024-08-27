@@ -7,7 +7,9 @@ import com.toursandtravel.entity.Activity;
 import com.toursandtravel.entity.Meal;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
+@EqualsAndHashCode(callSuper=true)
 @Data
 public class ActivityOrMealResponseDto extends CommonApiResponse {
 

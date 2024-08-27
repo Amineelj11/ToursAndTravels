@@ -6,7 +6,9 @@ import java.util.List;
 import com.toursandtravel.entity.Transport;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
+@EqualsAndHashCode(callSuper=true)
 @Data
 public class TransportResponseDto extends CommonApiResponse {
 
