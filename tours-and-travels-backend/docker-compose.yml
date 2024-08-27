@@ -5,16 +5,14 @@ services:
     container_name: mysqldb
     image: mysql:latest
     environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=devops
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: tours_travel_system
     ports:
-      - "3307:3307"
+      - "3306:3306"
     networks:
       - my_network
     volumes:
       - ./mysql:/docker-entrypoint-initdb.d
-
-
 
   devops_amine:
     image: amineelj11/tours:latest
@@ -23,9 +21,8 @@ services:
     container_name: tours
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://db/tours_travel_system
-      SPRING_DATASOURCE_USERNAME : root
-      SPRING_DATASOURCE_PASSWORD : root
-
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
     depends_on:
       - db
     networks:
