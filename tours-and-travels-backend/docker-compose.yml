@@ -8,7 +8,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: tours_travel_system
     ports:
-      - "3306:3306"
+      - "3307:3306"
     networks:
       - my_network
     volumes:
