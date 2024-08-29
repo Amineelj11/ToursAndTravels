@@ -9,4 +9,4 @@ RUN curl -O $NEXUS_URL/$NEXUS_REPO_PATH/com/toursandtravel/tours-and-travels-bac
 
 EXPOSE 8082
 
-CMD [ "java", "-jar", "tours-and-travels-backend-0.0.1.jar" ]
+CMD ["java", "-jar", "tours-and-travels-backend-0.0.1.jar"]
