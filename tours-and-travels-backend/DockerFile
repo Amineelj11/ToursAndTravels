@@ -1,12 +1,4 @@
-FROM openjdk:17
-WORKDIR /app
-
-ARG NEXUS_URL=http://192.168.33.10:8081
-ARG NEXUS_REPO_PATH=repository/maven-releases
-
-RUN apt-get update && apt-get install -y curl
-RUN curl -O $NEXUS_URL/$NEXUS_REPO_PATH/com/toursandtravel/tours-and-travels-backend/0.0.1/tours-and-travels-backend-0.0.1.jar
-
+FROM openjdk:11
 EXPOSE 8082
-
-CMD ["java", "-jar", "tours-and-travels-backend-0.0.1.jar"]
+ADD target/tours-and-travels-backend-0.0.1.jar tours-and-travels-backend-0.0.1.jar
+ENTRYPOINT ["java","-jar","/tours-and-travels-backend-0.0.1.jar"]
