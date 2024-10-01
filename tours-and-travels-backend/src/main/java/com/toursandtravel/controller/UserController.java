@@ -1,15 +1,12 @@
 package com.toursandtravel.controller;
 
+import com.toursandtravel.entity.User;
+import com.toursandtravel.service.UserServiceImpl;
+import com.toursandtravel.utility.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.toursandtravel.dto.CommonApiResponse;
@@ -21,6 +18,8 @@ import com.toursandtravel.resource.UserResource;
 
 import io.swagger.v3.oas.annotations.Operation;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("api/user")
 @CrossOrigin(origins = "http://localhost:3000")
@@ -28,6 +27,8 @@ public class UserController {
 
 	@Autowired
 	private UserResource userResource;
+	@Autowired
+	private UserServiceImpl userService;
 
 	// RegisterUserRequestDto, we will set only email, password & role from UI
 	@PostMapping("/admin/register")
@@ -67,5 +68,16 @@ public class UserController {
 	public ResponseEntity<UserResponseDto> fetchUserById(@RequestParam("userId") int userId) {
 		return userResource.getUserById(userId);
 	}
+
+	@PostMapping("/admin/approve-tourguide/{userId}")
+	public ResponseEntity<CommonApiResponse> approveTourGuide(@PathVariable int userId) {
+		return userResource.approveTourGuide(userId);
+	}
+	@GetMapping("/fetch/deactivated-tour-guides")
+	public ResponseEntity<List<User>> getDeactivatedTourGuides() {
+		List<User> deactivatedTourGuides = userService.getUserByRoleAndStatus("ROLE_TOUR_GUIDE", Constants.ActiveStatus.DEACTIVATED.value());
+		return new ResponseEntity<>(deactivatedTourGuides, HttpStatus.OK);
+	}
+
 
 }

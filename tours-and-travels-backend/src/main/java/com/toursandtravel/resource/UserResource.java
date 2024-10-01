@@ -119,57 +119,67 @@ public class UserResource {
 		CommonApiResponse response = new CommonApiResponse();
 
 		if (request == null) {
-			response.setResponseMessage("user is null");
+			response.setResponseMessage("User is null");
 			response.setSuccess(false);
-
-			return new ResponseEntity<CommonApiResponse>(response, HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
 		}
 
 		User existingUser = this.userService.getUserByEmailAndStatus(request.getEmailId(), ActiveStatus.ACTIVE.value());
 
 		if (existingUser != null) {
-			response.setResponseMessage("User with this Email Id already resgistered!!!");
+			response.setResponseMessage("User with this Email Id already registered!!!");
 			response.setSuccess(false);
-
-			return new ResponseEntity<CommonApiResponse>(response, HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
 		}
 
 		if (request.getRole() == null) {
-			response.setResponseMessage("bad request ,Role is missing");
+			response.setResponseMessage("Bad request, Role is missing");
 			response.setSuccess(false);
-
-			return new ResponseEntity<CommonApiResponse>(response, HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
 		}
 
+		// Convert request DTO to User entity
 		User user = RegisterUserRequestDto.toUserEntity(request);
 
+		// Encode the password
 		String encodedPassword = passwordEncoder.encode(user.getPassword());
-
-		user.setStatus(ActiveStatus.ACTIVE.value());
 		user.setPassword(encodedPassword);
 
+		// Set user role and status based on the role from the request
+		if (request.getRole().equals(UserRole.ROLE_TOUR_GUIDE.value())) {
+			user.setRole(UserRole.ROLE_TOUR_GUIDE.value()); // Set the role to TOUR_GUIDE
+			user.setStatus(ActiveStatus.DEACTIVATED.value()); // Set default status to DEACTIVATED
+		} else if (request.getRole().equals(UserRole.ROLE_CUSTOMER.value())) {
+			user.setRole(UserRole.ROLE_CUSTOMER.value()); // Set the role to CUSTOMER
+			user.setStatus(ActiveStatus.ACTIVE.value()); // Set default status to ACTIVE
+		} else {
+			response.setResponseMessage("Invalid role provided");
+			response.setSuccess(false);
+			return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+		}
+
+		// Set address information
 		Address address = new Address();
 		address.setCity(request.getCity());
 		address.setPincode(request.getPincode());
 		address.setStreet(request.getStreet());
 
 		Address savedAddress = this.addressService.addAddress(address);
-
 		if (savedAddress == null) {
-			throw new UserSaveFailedException("Registration Failed because of Technical issue:(");
+			throw new UserSaveFailedException("Registration Failed due to technical issue");
 		}
 
 		user.setAddress(savedAddress);
 		existingUser = this.userService.addUser(user);
 
 		if (existingUser == null) {
-			throw new UserSaveFailedException("Registration Failed because of Technical issue:(");
+			throw new UserSaveFailedException("Registration Failed due to technical issue");
 		}
 
-		response.setResponseMessage("User registered Successfully");
+		response.setResponseMessage("User registered successfully");
 		response.setSuccess(true);
 
-		return new ResponseEntity<CommonApiResponse>(response, HttpStatus.OK);
+		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
 
 	public ResponseEntity<UserLoginResponse> login(UserLoginRequest loginRequest) {
@@ -337,5 +347,50 @@ public class UserResource {
 		return new ResponseEntity<CommonApiResponse>(response, HttpStatus.OK);
 
 	}
+
+	public ResponseEntity<CommonApiResponse> approveTourGuide(int userId) {
+
+		LOG.info("Received request to approve tour guide with ID: {}", userId);
+
+		CommonApiResponse response = new CommonApiResponse();
+
+		// Fetch the user by ID
+		User user = this.userService.getUserById(userId);
+
+		if (user == null) {
+			response.setResponseMessage("User not found");
+			response.setSuccess(false);
+			return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+		}
+
+		// Check if the user has the role of TOUR_GUIDE
+		if (!user.getRole().equals(UserRole.ROLE_TOUR_GUIDE.value())) {
+			response.setResponseMessage("User is not a tour guide");
+			response.setSuccess(false);
+			return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+		}
+
+		// Check if the user is currently DEACTIVATED
+		if (!user.getStatus().equals(ActiveStatus.DEACTIVATED.value())) {
+			response.setResponseMessage("User is already active or has an invalid status");
+			response.setSuccess(false);
+			return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+		}
+
+		// Approve the tour guide by setting the status to ACTIVE
+		user.setStatus(ActiveStatus.ACTIVE.value());
+		User updatedUser = this.userService.updateUser(user);
+
+		if (updatedUser == null) {
+			response.setResponseMessage("Failed to approve tour guide due to technical issues");
+			response.setSuccess(false);
+			return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+
+		response.setResponseMessage("Tour guide approved successfully");
+		response.setSuccess(true);
+		return new ResponseEntity<>(response, HttpStatus.OK);
+	}
+
 
 }
