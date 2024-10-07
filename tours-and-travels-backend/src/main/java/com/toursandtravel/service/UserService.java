@@ -23,4 +23,8 @@ public interface UserService {
 	List<User> updateAllUser(List<User> users);
 
 	List<User> getUserByRoleAndStatus(String role, String status);
+
+	public List<User> getNonActiveUsers();
+
+
 }

@@ -79,5 +79,10 @@ public class UserController {
 		return new ResponseEntity<>(deactivatedTourGuides, HttpStatus.OK);
 	}
 
+	@GetMapping("/fetch/non-active-users")
+	public ResponseEntity<List<User>> getNonActiveUsers() {
+		List<User> nonActiveUsers = userService.getNonActiveUsers();
+		return new ResponseEntity<>(nonActiveUsers, HttpStatus.OK);
+	}
 
 }

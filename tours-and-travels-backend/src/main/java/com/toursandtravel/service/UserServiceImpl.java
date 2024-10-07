@@ -3,6 +3,7 @@ package com.toursandtravel.service;
 import java.util.List;
 import java.util.Optional;
 
+import com.toursandtravel.utility.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -67,5 +68,11 @@ public class UserServiceImpl implements UserService {
 	public List<User> getUserByRoleAndStatus(String role, String status) {
 		return this.userDao.findByRoleAndStatus(role, status);
 	}
-	
+
+	@Override
+	public List<User> getNonActiveUsers() {
+		return userDao.findByStatusNot(Constants.ActiveStatus.ACTIVE.value());
+	}
+
+
 }

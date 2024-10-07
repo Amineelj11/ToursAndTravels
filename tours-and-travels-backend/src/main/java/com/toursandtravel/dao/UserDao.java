@@ -22,4 +22,8 @@ public interface UserDao extends JpaRepository<User, Integer> {
 	
 	List<User> findByRoleAndStatus(String role, String status);
 
+	List<User> findByStatusNot(String status);
+
+
+
 }
