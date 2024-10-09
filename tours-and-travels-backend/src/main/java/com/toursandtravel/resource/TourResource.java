@@ -83,7 +83,7 @@ public class TourResource {
 			return new ResponseEntity<CommonApiResponse>(response, HttpStatus.BAD_REQUEST);
 		}
 
-		if (request.getFromLocationId().equals(request.getToLocationId())) {
+		if (request.getFromLocationId() == request.getToLocationId()) {
 			response.setResponseMessage("From & To Loction should be different!!!");
 			response.setSuccess(false);
 
@@ -411,7 +411,7 @@ public class TourResource {
 			return new ResponseEntity<CommonApiResponse>(response, HttpStatus.BAD_REQUEST);
 		}
 
-		if (request.getFromLocationId().equals(request.getToLocationId())) {
+		if (request.getFromLocationId() == request.getToLocationId()) {
 			response.setResponseMessage("From & To Loction should be different!!!");
 			response.setSuccess(false);
 
