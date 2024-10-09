@@ -145,7 +145,7 @@ public class TourResource {
 
 		tour.setTransport(transport);
 
-		Type typeProg = this.typeProgService.getById(request.getTypeProgId());
+		/*Type typeProg = this.typeProgService.getById(request.getTypeProgId());
 
 		if (typeProg == null || !typeProg.getStatus().equals(ActiveStatus.ACTIVE.value())) {
 			response.setResponseMessage("typeProg not found!!!");
@@ -154,7 +154,7 @@ public class TourResource {
 			return new ResponseEntity<CommonApiResponse>(response, HttpStatus.BAD_REQUEST);
 		}
 
-		tour.setTypeProg(typeProg);
+		tour.setTypeProg(typeProg);*/
 
 		Lodging lodging = this.lodgingService.getById(request.getLodgingId());
 
@@ -457,10 +457,10 @@ public class TourResource {
 			dbTour.setTransport(this.transportService.getById(request.getTransportId()));
 		}
 
-		if (request.getTypeProgId() != null && request.getTypeProgId() != 0
+		/*if (request.getTypeProgId() != null && request.getTypeProgId() != 0
 				&& dbTour.getTypeProg().getId() != request.getTypeProgId()) {
 			dbTour.setTypeProg(this.typeProgService.getById(request.getTypeProgId()));
-		}
+		}*/
 
 		if (request.getLodgingId() == null && request.getLodgingId() == 0
 				&& dbTour.getLodging().getId() != request.getLodgingId()) {

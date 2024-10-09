@@ -37,7 +37,7 @@ public class AddTourRequest {
 
 	private Integer transportId;
 
-	private Integer typeProgId;
+	//private Integer typeProgId;
 
 	// Registration no of Bus, Train or Flight
 	private String vehicleRegistrationNo;
@@ -79,7 +79,7 @@ public class AddTourRequest {
 				|| CollectionUtils.isEmpty(request.getActivities()) || CollectionUtils.isEmpty(request.getMeals())
 				|| request.getTotalDaysOfTour() == null || request.getGuideId() == null
 				|| request.getFromLocationId() == null || request.getToLocationId() == null
-				|| request.getTransportId() == null || request.getTypeProgId() == null
+				|| request.getTransportId() == null /*|| request.getTypeProgId() == null*/
 				|| request.getVehicleRegistrationNo() == null
 				|| request.getLodgingId() == null || request.getLodgingName() == null
 				|| request.getLodgingAddress() == null || request.getTotalTickets() == null
@@ -95,7 +95,7 @@ public class AddTourRequest {
 	public static Tour toTourEntity(AddTourRequest request) {
 		Tour tour = new Tour();
 		BeanUtils.copyProperties(request, tour, "id", "guideId", "fromLocationId", "toLocationId", "transportId",
-				"lodgingId","typeProgId", "image1", "image2", "image3", "activities", "meals");
+				"lodgingId"/*,"typeProgId"*/, "image1", "image2", "image3", "activities", "meals");
 		return tour;
 	}
 

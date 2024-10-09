@@ -45,9 +45,9 @@ public class Tour {
 	@JoinColumn(name = "transport_id")
 	private Transport transport;
 
-	@ManyToOne
+	/*@ManyToOne
 	@JoinColumn(name = "typeProg_id")
-	private Type typeProg;
+	private Type typeProg;*/
 
 	// Registration no of Bus, Train or Flight
 	private String vehicleRegistrationNo;
