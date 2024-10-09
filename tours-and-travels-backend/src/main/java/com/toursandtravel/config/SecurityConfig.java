@@ -19,6 +19,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import com.toursandtravel.filter.JwtAuthFilter;
 import com.toursandtravel.utility.Constants.UserRole;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
 @Configuration
 @EnableWebSecurity
@@ -36,21 +37,17 @@ public class SecurityConfig {
 
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-
-		http.csrf(csrf -> csrf.disable()).cors(cors -> cors.disable())
-
-				.authorizeHttpRequests(auth -> auth.requestMatchers("/api/user/login", "/api/user/register").permitAll()
-
-
-						.anyRequest().permitAll())
-
-				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
-
-		http.addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class);
+		http.csrf(csrf -> csrf
+						.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())) // Use a CSRF token repository
+				.cors(cors -> cors.disable())  // Disable if necessary, otherwise configure properly
+				.authorizeHttpRequests(auth -> auth
+						.requestMatchers("/api/user/login", "/api/user/register").permitAll()
+						.anyRequest().authenticated()  // Ensure sensitive operations are restricted to authenticated users
+				);
 
 		return http.build();
-
 	}
+
 
 	@Bean
 	public PasswordEncoder passwordEncoder() {
